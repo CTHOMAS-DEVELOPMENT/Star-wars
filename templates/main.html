@@ -1,0 +1,34 @@
+
+	<div class="container">
+			<messagebar message="{{message}}" state="{{state}}"></messagebar>
+			<div class="row" align="center">
+			<ul ng-repeat="x in ssdata">
+			
+				<li ng-class="(x.selected==true) ? 'selectall bg-info' : 'selectall text-secondary-info'" ng-click="setSelected(x)">
+					{{x.name}}
+				</li>
+				
+			</ul>
+			</div>
+			<div class="row" align="center">
+				<button ng-disabled="!previous" ng-click="getData(previous)" type="button" class="btn btn-primary btn-block">Previous</button>
+				<button ng-disabled="!next" ng-click="getData(next)" type="button" class="btn btn-lge btn-primary btn-block">Next</button>
+				<button ng-show="state=='people'" type="button" ng-click="toggleTypes()" class="btn btn-warning btn-block">View Starships</button>
+				<button ng-show="state=='starships'" type="button" ng-click="toggleTypes()" class="btn btn-info btn-block">View People</button>
+				<button ng-show="collection.length==2" ng-click="compare(collection,state)" class="btn btn-danger btn-block">Compare {{state}} "{{collection[0].name}}" and "{{collection[1].name}}"</button>
+				<button ng-show="showDetail && result" ng-click="toggleDetail()" class="btn btn-primary btn-block">Hide {{winner.name}} detail</button>
+				<button ng-show="!showDetail && result" ng-click="toggleDetail()" class="btn btn-primary btn-block">Show {{winner.name}} detail</button>
+			</div>
+			<div class="row" align="center" ng-show="result">
+			<span>Winner of {{state}} 
+				"{{winner.name}}" ( {{winner.number}} )</span> 
+				<span ng-show="state=='starships'" >crew </span><span ng-show="state=='people'" >pounds </span>
+			<span>beat 
+				"{{loser.name}}" ( {{loser.number}} )</span>
+				<span ng-show="state=='starships'" >crew.</span><span ng-show="state=='people'" >pounds.</span><br>
+
+			<pre ng-show="showDetail">{{winnerStr}}</pre>
+			</div>
+
+	</div>
+
