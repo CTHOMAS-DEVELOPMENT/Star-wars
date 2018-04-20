@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 (
 function(){
 	let ssdataaccess=function($http,$rootScope,$cacheFactory)
@@ -6,7 +7,7 @@ function(){
 		let getResource=function(url)
 		{
 			return httpCache.get(url);
-		}
+		};
 		let getResourceFromServer=function(url)
 		{
 			return $http.get(url, { cache: true})
@@ -16,9 +17,9 @@ function(){
 		return {
 			getResource:getResource,
 			getResourceFromServer:getResourceFromServer
-		}
+		};
 	};
 	let app=angular.module("search");
 	app.factory("ssDataAccess",ssdataaccess);
 }()
-)
+);

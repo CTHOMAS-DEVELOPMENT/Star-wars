@@ -24,6 +24,7 @@ module.exports = function (grunt) {
 		}
 	},
     // define source files and their destinations
+	/**
     uglify: {
 		build: {
                         src: ['*.js','javascript/*.js', 'javascript/controllers/*.js', 'javascript/directives/*.js', 'javascript/filters/*.js', 'javascript/services/*.js'],
@@ -31,6 +32,7 @@ module.exports = function (grunt) {
         }
 		
 	},
+	**/
 	jshint: {
 		// define the files to lintfiles: ['gruntfile.js', 'javascript/**/*.js', 'test/**/*.js'],
 		files: ['*.js', 'javascript/*.js', 'javascript/controllers/*.js', 'javascript/directives/*.js', 'javascript/filters/*.js', 'javascript/services/*.js'],
@@ -47,15 +49,17 @@ module.exports = function (grunt) {
 		
 	},
     watch: {
-      files: ['<%= jshint.files %>','javascript/css/search.scss'],
-      tasks: ['jshint','sass','uglify']
+      files: ['<%= jshint.files %>','css/style.css'],
+      tasks: ['jshint','sass']
+      //tasks: ['jshint','sass','uglify']
     }
 });
-	grunt.loadNpmTasks('grunt-contrib-uglify');
+	//grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.registerTask('default', ['watch', 'uglify','jshint']);
+	//grunt.registerTask('default', ['watch', 'uglify','jshint']);
+	grunt.registerTask('default', ['watch', 'jshint']);
 };

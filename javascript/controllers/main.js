@@ -1,5 +1,5 @@
+/*jshint esversion: 6 */ 
 (function() {
-
   let app = angular.module('search');
   const base="https://swapi.co/api/";
   let main = function($scope,ssDataAccess) {
@@ -38,7 +38,7 @@
 		$scope.winnerStr=$scope.winnerStr.substring(1, $scope.winnerStr.length-1);
 		$scope.result=true;
 		
-	}
+	};
 	$scope.toggleTypes = function()
 	{
 		$scope.collection=[];
@@ -47,9 +47,9 @@
 		$scope.showDetail=false;
 		
 		$scope.state= $scope.state==="starships" ? "people":"starships";
-		$scope.getData(base+$scope.state+"/?page=1")
+		$scope.getData(base+$scope.state+"/?page=1");
 		
-	}
+	};
 	/*Utility function to de-structure the dataset after retrieving from the server or the cache*/
 	destructureData=function(message)
 	{
@@ -58,7 +58,7 @@
 		$scope.next=$scope.starshipData.next;
 		$scope.previous=$scope.starshipData.previous;
 		$scope.message=message;
-	}
+	};
 	$scope.getData = function(url)
 	{
 		$scope.datapage=url.substr(url.indexOf("=")+1);
@@ -81,12 +81,12 @@
 			} );
 		}
 		
-	}
+	};
 	$scope.setSelected = function(selected)
 	{
 		$scope.ssdata.map(function(el){ el.selected=false;});
 		selected.selected=true;
-		$scope.collection.push(selected)
+		$scope.collection.push(selected);
 		if($scope.collection.length>2)
 		{
 			/*Remove the first element*/
@@ -97,12 +97,12 @@
 		$scope.result=false;
 		$scope.showDetail=false;
 		
-	}
+	};
 	$scope.toggleDetail = function()
 	{
 		$scope.showDetail= $scope.showDetail===true?false:true;
-	}
-	$scope.getData(base+$scope.state+"/?page=1")
-  }
+	};
+	$scope.getData(base+$scope.state+"/?page=1");
+  };
   app.controller('maincontroller', ["$scope", "ssDataAccess", main]);
 }());
