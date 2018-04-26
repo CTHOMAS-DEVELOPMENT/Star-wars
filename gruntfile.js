@@ -27,7 +27,7 @@ module.exports = function (grunt) {
     // define source files and their destinations
     uglify: {
 		build: {
-                        src: ['*.js','javascript/*.js', 'javascript/controllers/*.js', 'javascript/directives/*.js', 'javascript/filters/*.js', 'javascript/services/*.js'],
+                        src: ['javascript/*.js', 'javascript/controllers/*.js', 'javascript/directives/*.js', 'javascript/filters/*.js', 'javascript/services/*.js'],
                         dest: 'dist/bulk.min.js'
         }
 		
