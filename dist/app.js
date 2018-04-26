@@ -1,3 +1,5 @@
+'use strict';
+
 (function () {
 	var app = angular.module('search', ['ui.router']);
 
@@ -9,3 +11,4 @@
 		$rootScope.$on("$stateChangeError", function (event, toState, toParams, fromState, fromParams, error) {});
 	});
 })();
+//# sourceMappingURL=app.js.map

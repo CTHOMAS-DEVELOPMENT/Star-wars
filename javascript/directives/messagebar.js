@@ -1,15 +1,11 @@
-/*jshint esversion: 6 */ 
-(
-function(){
-	var gamebar=function(){
+(function () {
+	var gamebar = function gamebar() {
 		return {
-				restrict: "AE",
-				templateUrl:"templates/gamebar.html",
-				scope: { message:"@", state:"@"}
+			restrict: "AE",
+			templateUrl: "templates/gamebar.html",
+			scope: { message: "@", state: "@" }
 		};
 	};
-	let app=angular.module("search");
-	app.directive("messagebar",gamebar);
-}()
-);
-
+	var app = angular.module("search");
+	app.directive("messagebar", gamebar);
+})();

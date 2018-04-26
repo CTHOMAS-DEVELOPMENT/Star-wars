@@ -2,12 +2,11 @@
 	<div class="container">
 			<messagebar message="{{message}}" state="{{state}}"></messagebar>
 			<div class="row" align="center">
-			<ul ng-repeat="x in ssdata">
+			<ul ng-repeat="x in ssdata" class="selectall">
 			
-				<li ng-class="(x.selected==true) ? 'selectall bg-info' : 'selectall text-secondary-info'" ng-click="setSelected(x)">
-					{{x.name}}
-				</li>
-				
+				<!--li ng-class="(x.selected==true) ? 'selectall bg-info' : 'selectall text-secondary-info'" ng-click="setSelected(x)">{{x.name}}</li-->
+				<li ng-class="{'bg-info':hovering }" ng-mouseenter="hovering=true" ng-mouseleave="hovering=false" ng-click="setSelected(x)">{{x.name}}<button ng-show="x.selected" type="button"" class="btn-xs btn-warning">Selected</button></li>
+			
 			</ul>
 			</div>
 			<div class="row" align="center">
@@ -29,6 +28,10 @@
 
 			<pre ng-show="showDetail">{{winnerStr}}</pre>
 			</div>
+			 <!--div class="chip">
+				<img src="images/face.jpg" alt="Contact Person">
+				Charles
+			</div-->
 
 	</div>
 

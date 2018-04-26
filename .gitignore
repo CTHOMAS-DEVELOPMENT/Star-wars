@@ -1,2 +1,10 @@
 node_modules
 .sass-cache
+css/materialize.min.css
+css/materialize.min.js
+css/materializefallback.css
+fonts
+images
+lib
+package-lock.json
+

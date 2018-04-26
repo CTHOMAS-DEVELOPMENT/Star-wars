@@ -1,25 +1,20 @@
-/*jshint esversion: 6 */
-(
-function(){
-	let ssdataaccess=function($http,$rootScope,$cacheFactory)
-	{
-		let httpCache = $cacheFactory.get('$http');
-		let getResource=function(url)
-		{
+(function () {
+	var ssdataaccess = function ssdataaccess($http, $rootScope, $cacheFactory) {
+		var httpCache = $cacheFactory.get('$http');
+		var getResource = function getResource(url) {
 			return httpCache.get(url);
 		};
-		let getResourceFromServer=function(url)
-		{
-			return $http.get(url, { cache: true})
-			.then( function(response){ return response.data; });
-		};		
+		var getResourceFromServer = function getResourceFromServer(url) {
+			return $http.get(url, { cache: true }).then(function (response) {
+				return response.data;
+			});
+		};
 
 		return {
-			getResource:getResource,
-			getResourceFromServer:getResourceFromServer
+			getResource: getResource,
+			getResourceFromServer: getResourceFromServer
 		};
 	};
-	let app=angular.module("search");
-	app.factory("ssDataAccess",ssdataaccess);
-}()
-);
+	var app = angular.module("search");
+	app.factory("ssDataAccess", ssdataaccess);
+})();
