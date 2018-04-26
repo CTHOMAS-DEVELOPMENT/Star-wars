@@ -3,6 +3,7 @@ node_modules
 css/materialize.min.css
 css/materialize.min.js
 css/materializefallback.css
+css/style.scss.map
 fonts
 images
 lib

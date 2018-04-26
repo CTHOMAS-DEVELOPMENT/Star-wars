@@ -20,7 +20,12 @@ Install:
 	Go to the root directory after cloning from the master repository and type 'npm install'. (Ensure a reasonable version of Node is installed universally)
 
 Work flow: 
-	Go to the root directory after cloning from the master repository and type 'grunt'. (Ensure a reasonable version of Grunt is installed universally)
+	(1)Open a command window. Go to the root directory after cloning from the master repository and type 'grunt'. (Ensure a reasonable version of Grunt is installed universally)
+	(2)Open a 2nd command window. Go to the root directory and type "npm run build". 
+	(3)Change any file in the src directory and code in ES6. 
+	(4)When your ready type "npm run build" again in the 2nd command window
+	(5)As long as grunt is watching (As specified from (1)), the ES5 files are pushed into the javascript folder and this causes the grunt tasks to run
+	(6)Make changes to the scss file to change the css file.
 
 Run tests: 
 	Go to the root directory after cloning from the master repository and type 'karma start'. 
