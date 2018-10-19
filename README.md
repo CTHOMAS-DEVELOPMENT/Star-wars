@@ -1,4 +1,4 @@
-This application was built using SWAPI (https://swapi.co/documentation) as the back end API.
+Angular (1.6.x) This application was built using SWAPI (https://swapi.co/documentation) as the back end API.
 
 (1)Select random people or starships and render their details to see who would win based on a common attribute.
 (a)A person with greater mass wins.
